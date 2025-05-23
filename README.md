@@ -1,4 +1,4 @@
-# E-commerce Auction Site
+# E-commerce Auction Site with real time bid validation
 
 A Django-based auction platform where users can create, bid on, and manage listings. This project was developed as part of CS50W (Web Programming with Python and JavaScript).
 
