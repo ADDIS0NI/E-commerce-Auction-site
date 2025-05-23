@@ -1,0 +1,55 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="form-container">
+    <div class="card custom-card p-4">
+        <h2 class="text-center mb-4">Login</h2>
+
+        {% if message %}
+            <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            
+            <!-- Email input -->
+            <div class="form-floating mb-4">
+                <input type="email" id="floatingEmail" class="form-control" name="username" required autofocus placeholder="Enter Email Address">
+                
+            </div>
+
+            <!-- Password input -->
+            <div class="form-floating mb-4">
+                <input type="password" id="floatingPassword" class="form-control" name="password" required placeholder="Enter Password">
+                
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked>
+                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
